@@ -1,0 +1,5 @@
+pandas
+python-dotenv
+requests
+pyproj
+streamlit>=1.66
