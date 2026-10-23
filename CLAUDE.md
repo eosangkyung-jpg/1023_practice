@@ -84,3 +84,4 @@
 ## 실수에서 배운 규칙
 <!-- AI 실수를 찾을 때마다 한 줄씩: - (10/23) (해라/하지 마라) ___ (왜: ___) → 검사: ___ -->
 - (10/23) 해라: `pip install`은 **`streamlit run`·`python`을 실행하는 그 터미널(conda `d8` 환경이 켜진 곳)** 에서 한다. 설치 전에 `python -c "import sys; print(sys.executable)"`로 경로에 `envs\d8`이 있는지 먼저 확인한다. AI는 직접 설치하지 말고 명령만 제안한다. (왜: 파이썬이 여러 개라 다른 곳에 설치하면 `ModuleNotFoundError`가 남 — 10/23 folium이 Python312에만 깔리고 d8에는 없었음) → 검사: 설치한 터미널에서 `python -c "import folium"` 가 에러 없이 끝남
+- (10/23) 해라: 새 폴더에서 `git init`·첫 커밋을 하기 **전에** 레포 맨 위에 `.gitignore`(`.env`, `map.html`, `**/data/*_raw.*`, `__pycache__/`)부터 만들고, `git add` 뒤 `git status`에 `.env`가 **없는지** 눈으로 확인한 다음 커밋한다. 다른 폴더에서 `.env`를 복사해 왔다면 특히 더. (왜: 10/23 `D08-map`의 `.env`를 `1023_practice`로 옮겨 오고 바로 첫 커밋·푸시 → 이 폴더엔 `.gitignore`가 없어서 키가 **Public 레포**에 올라감. 하위 폴더 `.gitignore`는 바깥 파일을 못 막음. 커밋을 지워도 기록에 남으니 REST 키를 재발급해야 했음) → 검사: `git ls-files | grep .env` 결과에 `.env.example`만 나옴
