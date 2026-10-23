@@ -3,3 +3,5 @@ python-dotenv
 requests
 pyproj
 streamlit>=1.66
+numpy
+pillow

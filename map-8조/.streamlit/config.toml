@@ -1,0 +1,4 @@
+# map-8조 폴더에서 streamlit run 할 때 읽힌다
+[theme]
+base = "light"              # 브라우저가 다크 모드여도 흰 배경으로
+backgroundColor = "#FFFFFF"

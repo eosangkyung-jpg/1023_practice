@@ -1,0 +1,4 @@
+# Streamlit Community Cloud 는 레포 맨 위에서 실행하고 이 파일만 읽는다 (map-8조/.streamlit 은 로컬 실행용)
+[theme]
+base = "light"              # 브라우저가 다크 모드여도 흰 배경으로
+backgroundColor = "#FFFFFF"

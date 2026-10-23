@@ -1,4 +1,4 @@
-"""상권 칸을 부드럽게 번지는 원으로 그리고, 탭(PC는 커서)한 자리의 예상 도보 시간을 지도 아래 카드로 보여 주는 카카오 지도 HTML.
+"""상권 칸을 부드럽게 번지는 원으로 그리고, 탭(PC는 커서)한 자리의 예상 도보 시간을 지도 위쪽 카드로 보여 주는 카카오 지도 HTML.
 
 다른 파일에서:  from make_map import kakao_map_html
 REST 키는 HTML에 넣지 않는다. 지도에는 JavaScript 키(js_key)만 쓴다.
@@ -23,10 +23,11 @@ HTML_틀 = """<!doctype html>
   html, body { margin: 0; overflow: hidden; font-family: sans-serif; }  /* iframe 안 스크롤바 없애기 */
   #틀 { position: relative; }
   #map { width: 100%; height: __높이__px; background: #ddd; }
-  .안내 { margin: 0; padding: 3px 2px 0; font-size: 10.5px; line-height: 14px; color: #999;
+  .안내 { position: absolute; top: 0; left: 0; right: 0; z-index: 6; margin: 0; padding: 1px 6px;
+          font-size: 10px; line-height: 14px; color: #888; background: rgba(255,255,255,0.7); text-align: center;
           white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  /* 휴대폰: 떠다니는 말풍선 대신 지도 아래에 붙는 카드 */
-  .카드 { position: absolute; left: 8px; right: 8px; bottom: 8px; z-index: 5; pointer-events: none;
+  /* 휴대폰: 떠다니는 말풍선 대신 지도 위쪽에 붙는 카드 (아래쪽은 사진 속 손이 덮음) */
+  .카드 { position: absolute; left: 8px; right: 8px; top: 20px; z-index: 5; pointer-events: none;
           background: rgba(255,255,255,0.97); color: #222; border-radius: 14px;
           box-shadow: 0 4px 14px rgba(0,0,0,0.22); padding: 10px 12px; font-size: 13px; line-height: 1.55; }
   .카드 b { display: block; font-size: 15px; margin-bottom: 2px; }
@@ -38,8 +39,8 @@ HTML_틀 = """<!doctype html>
 </style>
 </head>
 <body>
-<div id="틀"><div id="map"></div></div>
-<p class="안내">지도가 회색이면: ① 카카오맵 사용 설정 ② 주소(포트까지) 등록 ③ 서버 주소로 열기</p>
+<div id="틀"><div id="map"></div>
+<p class="안내">지도가 회색이면: ① 카카오맵 사용 설정 ② 주소(포트까지) 등록 ③ 서버 주소로 열기</p></div>
 <script src="__SDK__?appkey=__JS키__&autoload=false"></script>
 <script>
 const 점들 = __점__;
