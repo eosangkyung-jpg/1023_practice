@@ -174,7 +174,7 @@ else:
                 for _, 줄 in view.iterrows()
             ],
         }
-        st.iframe(kakao_map_html(js키, 점들, 지도_설정, STYLE["지도_높이"]), height=STYLE["지도_높이"] + 30)
+        st.iframe(kakao_map_html(js키, 점들, 지도_설정, STYLE["지도_높이"]), height=STYLE["지도_높이"] + 20)  # 지도 + 안내 한 줄(14px) — 넘치면 스크롤바가 생김
         st.caption(f"색 = 걸어서 역 출구까지 {STYLE['범례']} · 점선 = 가로·세로로 걷는 길")
 
     # ── 숫자 2개 (지역 전체 요약) ───────────────────────────

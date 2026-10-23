@@ -20,10 +20,11 @@ HTML_틀 = """<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-  body { margin: 0; font-family: sans-serif; }
+  html, body { margin: 0; overflow: hidden; font-family: sans-serif; }  /* iframe 안 스크롤바 없애기 */
   #틀 { position: relative; }
   #map { width: 100%; height: __높이__px; background: #ddd; }
-  .안내 { margin: 0; padding: 6px 4px; font-size: 12px; color: #777; }
+  .안내 { margin: 0; padding: 3px 2px 0; font-size: 10.5px; line-height: 14px; color: #999;
+          white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   /* 휴대폰: 떠다니는 말풍선 대신 지도 아래에 붙는 카드 */
   .카드 { position: absolute; left: 8px; right: 8px; bottom: 8px; z-index: 5; pointer-events: none;
           background: rgba(255,255,255,0.97); color: #222; border-radius: 14px;
@@ -38,7 +39,7 @@ HTML_틀 = """<!doctype html>
 </head>
 <body>
 <div id="틀"><div id="map"></div></div>
-<p class="안내">지도가 회색이면: ① 카카오맵 사용 설정 ② 지금 주소(포트까지) 등록 ③ 서버 주소로 열기</p>
+<p class="안내">지도가 회색이면: ① 카카오맵 사용 설정 ② 주소(포트까지) 등록 ③ 서버 주소로 열기</p>
 <script src="__SDK__?appkey=__JS키__&autoload=false"></script>
 <script>
 const 점들 = __점__;
